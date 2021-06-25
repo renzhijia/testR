@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.5.1.min.js"></script>
+</head>
+<style>
+</style>
+<body>
+    <table  border="1" style="border-collapse: collapse;width: 100%;height:100px;" class="table">
+        <thead>
+            <th></th>
+            <th>测试</th>
+            <th>测试2</th>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <script>
+        var data = [
+            {
+                name:'test',
+                name2:'能看到你卡上能看到卡萨诺的扩散看到你卡上电脑卡死你打开速度你撒开你的卡是男的看上可能是看到卡萨诺的你的卡上能看到那看到你卡上卡上能看到你撒开0',
+                name3:'23'
+            },
+            {
+                name:'test2',
+                name2:'能开你的卡是男的看上开你的卡是男的看上可能可能开你的卡是男的看上可能速度你撒开你的卡是男的看上可能是看到卡萨诺的你的卡上能看到那看到你卡上卡上能看到你撒开0',
+                name3:'232'
+            }
+        ]
+        for(var i=0; i<data.length;i++){
+            var maxwidth=10;   
+            var content = ''
+            if(data[i].name2.length>maxwidth){
+                //截取字符串
+                content = data[i].name2.substring(0,maxwidth) + '...'
+            }else{
+                content = data[i].name2.substring(0,maxwidth)
+            }
+            $('.table tbody').append(
+                '<tr>' + 
+                    '<td style="width:120px;height: 45px;">' + data[i].name + '</td>' + 
+                    '<td style="width:120px;height: 45px;">' + 
+                        '<div  title="' + data[i].name2 + '">' + content + '</div>' + 
+                    '</td>' + 
+                    '<td style="height: 45px;">' + data[i].name3 + '</td>' + 
+                '</tr>'
+            )
+        }
+    </script>
+</body>
+</html>
